@@ -5,7 +5,8 @@
     <script>
         $(document).ready(function(){
             $("#btn1").click(function(){
-                $("ul").append("<li>" +$("#test").val() + "<button id='remo'>Remove</button></li>");        
+                $("ul").append("<li>" +$("#test").val() + "<button id='remo'>Remove</button></li>"); 
+                $("#test").val("");      
             });
             $("ul").on('click','#remo',function(){
                 const taskItem=$(this).parent(); //parent of the button is the li

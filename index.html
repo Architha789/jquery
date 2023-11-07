@@ -5,15 +5,14 @@
     <script>
         $(document).ready(function(){
             $("#btn1").click(function(){
-                $("ul").append("<li>" +$("#test").val() +"</li>");        
+                $("ul").append("<li>" +$("#test").val() + "<button id='remo'>Remove</button></li>");        
             });
-            $("#btn2").click(function(){
-                $("li").remove("#p1");
+            $("ul").on('click','#remo',function(){
+                const taskItem=$(this).parent(); //parent of the button is the li
+                taskItem.remove();
             });
-            $("#btn3").click(function(){
-                $("li").remove("#p2");
-            });
-        });
+           
+    });
 
         
     </script>
@@ -26,8 +25,7 @@
     <input type="text" id="test">
     <button id="btn1">Add Task</button>
     <ul>
-       <li id="p1">Read &nbsp;&nbsp;&nbsp;&nbsp;<button id="btn2">Remove</button> </li>
-        <li id="p2">Write  &nbsp;&nbsp;&nbsp;&nbsp;<button id="btn3">Remove</button></li>
+      
     </ul>
 </body>
 </html>
